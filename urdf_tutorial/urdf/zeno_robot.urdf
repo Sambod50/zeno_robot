@@ -1,0 +1,515 @@
+<?xml version="1.0"?>
+<!--
+ the coordantes are taken from zeno_measurement_ROS2
+-->
+<robot name="myrobot">
+<!--Materials-->
+<material name="gray">
+	<color rgba="0.5 0.5 0.5 1"/>
+</material>
+
+<material name="blue">
+	<color rgba="0 0 1 1"/>
+</material>
+<material name="green">
+	<color rgba="0 1 0 1"/>
+</material>
+<!-- -->
+ <link name="base_link"/>
+ <link name="pelvis_link">
+	<visual>
+		<origin xyz="0 0.0 -0.2"/>
+		<geometry>
+			<mesh filename="package://urdf_tutorial/mesh/outer_pelvis_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="gray"/>
+	</visual>
+ </link>
+
+ <link name="chest_link">
+	<visual>
+		<origin xyz="0 0.0 -0.2"/>
+		<geometry>
+			<mesh filename="package://urdf_tutorial/mesh/upper_spine.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="gray"/>
+	</visual>
+ </link>
+
+ <link name="neck_yaw_link">
+	<visual>
+		<origin xyz="0.0 0.0 -0.17"/>
+		<geometry>
+			<mesh   filename="package://urdf_tutorial/mesh/neck_yaw_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="blue"/>
+	</visual>
+ </link>
+
+ <link name="neck_pitch_link">
+	<visual>
+		<origin xyz="0.0 0.0 -0.17"/>
+		<geometry>
+			<mesh   filename="package://urdf_tutorial/mesh/neck_pitch.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="green"/>
+	</visual>
+ </link>
+
+ <link name="neck_roll_link">
+	<visual>
+		<origin xyz="0 -0.4 0.0"/>
+		<geometry>
+			<mesh   filename="package://urdf_tutorial/mesh/head.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="gray"/>
+	</visual>
+ </link>
+
+<!--LEFT LEG LINKS-->
+
+ <link name="l_hip_yaw_link">	
+	<visual>
+	  	<origin xyz="0.0 0.0 -0.73"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/l_hip_roll_inner_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="green"/>
+    </visual>
+ </link>
+
+ <link name="l_hip_roll_link">
+	<visual>
+	  	<origin xyz="0.095 0.0 -0.19"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/l_hip_roll_outer_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="blue"/>
+	</visual>
+ </link>
+
+ <link name="l_hip_pitch_link">
+	<visual>
+		<origin xyz="0.0 0.0 0.0"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/l_knee_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="green"/>
+	</visual>
+ </link>
+
+ <link name="l_knee_pitch_link">
+	<visual>
+		<origin xyz="0.0 0.0 0.0"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/l_shin_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="blue"/>
+	</visual>
+ </link>
+
+ <link name="l_ankle_pitch_link">
+	<visual>
+		<origin xyz="0.0 0.0 0.0"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/l_ankle_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="gray"/>
+	</visual>
+ </link>
+ <link name="l_ankle_roll_link">
+	<visual>
+		<origin xyz="0.0 0.0 0.0"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/l_foot_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="green"/>
+	</visual>
+ </link>
+
+<!-- LEFT ARM LINKS-->
+
+ <link name="l_shoulder_pitch_link">
+	<visual>
+		<origin xyz="0.13 0.0 -0.13"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/l_shoulder_pitch_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="blue"/>
+	</visual>
+ </link>
+
+ <link name="l_shoulder_roll_link">
+   <visual>
+		<origin xyz="0.0 0.0 -0.233"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/l_shoulder_roll_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="green"/>
+	</visual>
+ </link>
+ <link name="l_elbow_roll_link">
+	<visual>
+		<origin xyz="-0.0 0.0 -0.2339"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/l_elbow_roll_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="gray"/>
+	</visual>
+ </link>
+ <link name="l_elbow_pitch_link">
+	<visual>
+		<origin xyz="-0.0 0.0 -0.2339"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/l_elbow_pitch_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="blue"/>
+	</visual>
+ </link>
+
+ <link name="l_wrist_roll_link">
+ 	<visual>
+		<origin xyz="-0.0 -0.236 -0.2339"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/l_wrist_roll_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="gray"/>
+	</visual>
+ </link>
+
+<!-- RIGHT LEG LINK-->
+
+ <link name="r_hip_yaw_link"> 
+	 <visual>
+		<origin xyz="0.0 0.0 -0.73"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/r_hip_roll_inner_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="green"/>
+	</visual>
+ </link>
+
+ <link name="r_hip_roll_link"> 
+   <visual>
+		<origin xyz="-0.07 0.0 -0.19"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/r_hip_roll_outer_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="blue"/>
+	</visual>
+ </link>
+
+ <link name="r_hip_pitch_link">
+	<visual>
+	    <origin xyz="0.0 0.0 -0.10889"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/r_knee_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="green"/>
+	</visual>
+ </link> 
+ <link name="r_knee_pitch_link">
+	<visual>
+		<origin xyz="0.0 0.0 0.0"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/r_shin_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="blue"/>
+	</visual>
+ </link>
+ <link name="r_ankle_pitch_link">
+	<visual>
+		<origin xyz="0.0 0.0 0.0"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/r_ankle_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="gray"/>
+	</visual>
+ </link>
+ <link name="r_ankle_roll_link">
+	<visual>
+		<origin xyz="0.0 0.0 0.0"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/r_foot_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="green"/>
+	</visual>
+ </link>
+
+<!--RIGHT ARM LINKS-->
+
+<link name="r_shoulder_pitch_link">
+	<visual>
+		<origin xyz="-0.11 0.0 -0.097"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/r_shoulder_pitch_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="blue"/>
+	</visual>
+</link>
+
+<link name="r_shoulder_roll_link">
+	<visual>
+		<origin xyz="0.0 0.0 -0.2"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/r_shoulder_roll_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="green"/>
+	</visual>
+</link>
+
+<link name="r_elbow_roll_link">
+	<visual>
+		<origin xyz="-0.0 0.0 -0.2"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/r_elbow_roll_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="gray"/>
+	</visual>
+</link>
+
+<link name="r_elbow_pitch_link">
+ 	<visual>
+		<origin xyz="-0.0 0.0 -0.2"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/r_elbow_pitch_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="blue"/>
+	</visual>
+</link>
+<link name="r_wrist_roll_link">
+    <visual>
+		<origin xyz="-0.0 -0.236 -0.2"/>
+		<geometry>
+			<mesh  filename="package://urdf_tutorial/mesh/r_wrist_roll_mesh.stl" scale="10 10 10"/>
+		</geometry>
+		<material name="gray"/>
+	</visual>
+</link>
+<!-- TORSO JOINTS-->
+
+<joint name="base_joint" type="fixed">
+	<parent link="base_link"/>
+	<child  link="pelvis_link"/>
+	<origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+</joint>
+
+<joint name="torso_joint" type="revolute">
+	<parent link="pelvis_link"/>
+	<child  link="chest_link"/>
+	<origin xyz="0 0 0.04" />
+	<axis xyz="0 0 1"/>
+    <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<!-- HEAD JOINTS-->
+<joint name="neck_yaw_joint" type="revolute">
+	<parent link="chest_link"/>
+	<child  link="neck_yaw_link"/>
+	<origin xyz="0 0 0.955" />
+	<axis xyz="0 0 1"/>
+    <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="neck_pitch_joint" type="revolute">
+     <parent link="neck_yaw_link"/>
+	<child  link="neck_pitch_link"/>
+	<origin xyz="0 0 0.28" />
+	<axis xyz="0 1 0"/>
+    <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="neck_roll_joint" type="revolute">
+   <parent link="neck_pitch_link"/>
+   <child  link="neck_roll_link"/>
+   <origin xyz="0.0 0.0 0.175"/>
+   <axis xyz="0 1 0"/>
+   <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+
+<!--LEFT ARM JOINTS-->
+
+<joint name="l_shoulder_pitch_joint" type="revolute">
+  	 <parent link= "chest_link"/>
+ 	 <child  link= "l_shoulder_pitch_link"/>
+	 <origin xyz= "0.4618 -0.055 0.60"/>
+	 <axis xyz="0 1 0"/>
+     <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="l_shoulder_roll_joint" type="revolute">
+  	 <parent link= "l_shoulder_pitch_link"/>
+ 	 <child  link= "l_shoulder_roll_link"/>
+	 <origin xyz= "0.3792 0.0 0.25"/>
+	 <axis xyz="1 0 0"/>
+     <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="l_elbow_roll_joint" type="revolute">
+  	 <parent link= "l_shoulder_roll_link"/>
+ 	 <child  link= "l_elbow_roll_link"/>
+	 <origin xyz= "0.754 -0.025 0.0956"/>
+	 <axis xyz="0 0 1"/>
+     <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="l_elbow_pitch_joint" type="revolute">
+  	 <parent link= "l_elbow_roll_link"/>
+ 	 <child  link= "l_elbow_pitch_link"/>
+	 <origin xyz= "0.24 0.0994 0.0"/>
+	 <axis xyz="0 1 0"/>
+     <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="l_wrist_roll_joint" type="revolute">
+  	 <parent link= "l_elbow_pitch_link"/>
+ 	 <child  link= "l_wrist_roll_link"/>
+	 <origin xyz= "0.3074 0.1183 0.0"/>
+	 <axis xyz="0 0 1"/>
+     <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<!-- RIFHT ARM JOINITS-->
+
+<joint name="r_shoulder_pitch_joint" type="revolute">
+  	 <parent link= "base_link"/>
+ 	 <child  link= "r_shoulder_pitch_link"/>
+	 <origin xyz= "-0.4818 -0.055 0.60"/>
+	 <axis xyz="0 1 0"/>
+     <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="r_shoulder_roll_joint" type="revolute">
+  	 <parent link= "r_shoulder_pitch_link"/>
+ 	 <child  link= "r_shoulder_roll_link"/>
+	 <origin xyz= "-0.3792 0.0 0.25"/>
+	 <axis xyz="1 0 0"/>
+     <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="r_elbow_roll_joint" type="revolute">
+  	 <parent link= "r_shoulder_roll_link"/>
+ 	 <child  link= "r_elbow_roll_link"/>
+	 <origin xyz= "-0.754 -0.025 0.0956"/>
+	 <axis xyz="0 0 1"/>
+     <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="r_elbow_pitch_joint" type="revolute">
+  	 <parent link= "r_elbow_roll_link"/>
+ 	 <child  link= "r_elbow_pitch_link"/>
+	 <origin xyz= "-0.24 0.0994 0.0"/>
+	 <axis xyz="0 1 0"/>
+     <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="r_wrist_roll_joint" type="revolute">
+  	 <parent link= "r_elbow_pitch_link"/>
+ 	 <child  link= "r_wrist_roll_link"/>
+	 <origin xyz= "-0.3074 0.1183 0.0"/>
+	 <axis xyz="0 0 1"/>
+     <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+
+<!--LEFT LEG JOINTS -->
+
+<joint name="l_hip_yaw_joint" type="revolute">
+  	 <parent link= "pelvis_link"/>
+ 	 <child  link= "l_hip_yaw_link"/>
+	 <origin xyz= "0.3905 -0.0983 -0.04" />
+	 <axis xyz="0 0 1"/>
+     <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="l_hip_roll_joint" type="revolute">
+  	 <parent link= "l_hip_yaw_link"/>
+ 	 <child  link= "l_hip_roll_link"/>
+	 <origin xyz= "0.0 0.0 -0.562" />
+	<axis xyz="1 0 0"/>
+    <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="l_hip_pitch_joint" type="revolute">
+  	 <parent link= "l_hip_roll_link"/>
+ 	 <child  link= "l_hip_pitch_link"/>
+	 <origin xyz= "0.0447 -0.0543 -0.4461" />
+	 <axis xyz="0 1 0"/>
+     <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="l_knee_pitch_joint" type="revolute">
+  	 <parent link= "l_hip_pitch_link"/>
+ 	 <child  link= "l_knee_pitch_link"/>
+	 <origin xyz= "0.0 0.0 -0.7497"/>
+	<axis xyz="0 1 0"/>
+    <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="l_ankle_pitch_joint" type="revolute">
+  	 <parent link= "l_knee_pitch_link"/>
+ 	 <child  link= "l_ankle_pitch_link"/>
+	 <origin xyz= "0.0 0.0037 -0.7"/>
+	 <axis xyz="0 1 0"/>
+     <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="l_ankle_roll_joint" type="revolute">
+  	 <parent link= "l_ankle_pitch_link"/>
+ 	 <child  link= "l_ankle_roll_link"/>
+	 <origin xyz= "0.0 0.21879 -0.0005"/>
+	<limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<!-- RIGHT LEG JOINTS-->
+
+<joint name="r_hip_yaw_joint" type="revolute">
+  	 <parent link= "pelvis_link"/>
+ 	 <child  link= "r_hip_yaw_link"/>
+	 <origin xyz= "-0.3905 -0.0983 -0.04" />
+	 <axis xyz="0 0 1"/>
+     <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="r_hip_roll_joint" type="revolute">
+  	 <parent link= "r_hip_yaw_link"/>
+ 	 <child  link= "r_hip_roll_link"/>
+	 <origin xyz= "0.0 0.0 -0.562" />
+	<axis xyz="1 0 0"/>
+    <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="r_hip_pitch_joint" type="revolute">
+  	 <parent link= "r_hip_roll_link"/>
+ 	 <child  link= "r_hip_pitch_link"/>
+	 <origin xyz= "-0.0447 -0.0543 -0.4461" />
+	<axis xyz="0 1 0"/>
+    <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="r_knee_pitch_joint" type="revolute">
+  	 <parent link= "r_hip_pitch_link"/>
+ 	 <child  link= "r_knee_pitch_link"/>
+	 <origin xyz= "0.0 0.0 -0.7497" />
+	<axis xyz="0 1 0"/>
+    <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="r_ankle_pitch_joint" type="revolute">
+  	 <parent link= "r_knee_pitch_link"/>
+ 	 <child  link= "r_ankle_pitch_link"/>
+	 <origin xyz= "0.0 0.0037 -0.7"/>
+	<axis xyz="0 1 0"/>
+    <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+<joint name="r_ankle_roll_joint" type="revolute">
+  	 <parent link= "r_ankle_pitch_link"/>
+ 	 <child  link= "r_ankle_roll_link"/>
+	 <origin xyz= "0.0 0.21879 -0.0005"/>
+	 <limit velocity="1.0" effort="10" lower="-3.1415" upper="3.1415" />
+</joint>
+
+
+</robot>
